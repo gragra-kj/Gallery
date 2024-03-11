@@ -4,10 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "npm run watch:css && react-scripts start",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:css && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:css":"postcss scr/assets/tailwindcss.css -0 src/assets/main.css",
+    "watch:css":"postcss scr/assets/tailwindcss.css -0 src/assets/main.css"
+
   },
   "dependencies": {
     "react": "^18.2.0",
